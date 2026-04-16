@@ -137,22 +137,22 @@
 
 ### Phase 5: 서비스 고도화
 
-- **Task 012: 다크/라이트 모드 토글 구현 (F008)** - 진행 중
-  - `next-themes` ThemeProvider 설정 검증 및 `enableSystem` 옵션 활성화
+- **Task 012: 다크/라이트 모드 토글 구현 (F008)** ✅ - 완료
+  - ✅ `next-themes` ThemeProvider 설정 검증 및 `enableSystem` 옵션 활성화
   - ✅ 관리자 레이아웃 상단바 우측에 `ThemeToggle` 버튼 배치 (라이트/다크/시스템 드롭다운)
   - ✅ 기존 `ThemeToggle` 컴포넌트(`src/components/theme-toggle.tsx`) 동작 확인
-  - 관리자 영역(`/`, `/invoices/[id]`)과 공개 뷰어(`/view/[id]`) 모두 테마 적용 확인
-  - 라이트/다크 모드 전환 시 모든 컴포넌트의 색상 대비(contrast) 검증
-  - 사용자 테마 선택 `localStorage` 영속 저장 확인
-  - Playwright MCP로 테마 전환 E2E 테스트 수행
+  - ✅ 관리자 영역(`/`, `/invoices/[id]`)과 공개 뷰어(`/view/[id]`) 모두 테마 적용 확인
+  - ✅ 라이트/다크 모드 전환 시 모든 컴포넌트의 색상 대비(contrast) 검증
+  - ✅ 사용자 테마 선택 `localStorage` 영속 저장 확인
+  - ✅ Playwright MCP로 테마 전환 E2E 테스트 수행
 
-- **Task 013: 견적서 목록 링크 복사 기능 추가 (F009)**
-  - `InvoiceTable` 컴포넌트에 "링크 복사" 컬럼 추가 (테이블 마지막 컬럼)
-  - 기존 `CopyLinkButton` 컴포넌트를 `size="sm"` `variant="ghost"`로 재활용
-  - 행 클릭 이벤트와 링크 복사 버튼 클릭 이벤트 충돌 방지 (`e.stopPropagation()`)
-  - 모바일 반응형 처리 — 좁은 화면에서 링크 복사 컬럼 표시 전략 (아이콘만 표시 또는 행 액션 메뉴)
-  - 복사 성공 시 sonner 토스트 알림 표시 (기존 CopyLinkButton 로직 활용)
-  - Playwright MCP로 목록 페이지 링크 복사 E2E 테스트 수행
+- **Task 013: 견적서 목록 링크 복사 기능 추가 (F009)** ✅ - 완료
+  - ✅ `InvoiceTable` 컴포넌트에 "링크 복사" 컬럼 추가 (테이블 마지막 컬럼)
+  - ✅ 기존 `CopyLinkButton` 컴포넌트를 `size="sm"` `variant="ghost"`로 재활용
+  - ✅ 행 클릭 이벤트와 링크 복사 버튼 클릭 이벤트 충돌 방지 (`e.stopPropagation()`)
+  - ✅ 모바일 반응형 처리 — 수평 스크롤로 링크 복사 컬럼 접근 (현재 프로젝트 패턴 일관성 유지)
+  - ✅ 복사 성공 시 sonner 토스트 알림 표시 (기존 CopyLinkButton 로직 활용)
+  - ✅ Playwright MCP로 목록 페이지 링크 복사 E2E 테스트 수행
 
 - **Task 014: 관리자 레이아웃 개선 (F010)** ✅ - 완료
   - ✅ `app/(admin)/layout.tsx` 생성 — `(admin)` route group 기반 관리자 전용 레이아웃
@@ -162,7 +162,7 @@
   - ✅ 모바일 반응형 — 사이드바를 Sheet(드로어)로 전환
   - ✅ 공개 뷰어(`/view/[id]`)는 기존 단독 레이아웃 유지
   - ✅ `/`, `/invoices/[id]`, `/dashboard` 페이지에 관리자 레이아웃 자동 적용
-  - Playwright MCP로 관리자 레이아웃 네비게이션 및 반응형 E2E 테스트 수행
+  - ✅ Playwright MCP로 관리자 레이아웃 네비게이션 및 반응형 E2E 테스트 수행
 
 - **Task 015: 견적서 대시보드 추가 (F011)** ✅ - 완료
   - ✅ `/dashboard` 신규 라우트 생성 (`app/(admin)/dashboard/page.tsx`)
@@ -171,33 +171,45 @@
   - ✅ 최근 견적서 5건 테이블 컴포넌트
   - ✅ 만료 임박 알림 컴포넌트 — 오늘 기준 7일 이내 만료 예정 및 만료된 견적서
 
-- **Task 014-1: 고도화 통합 테스트**
-  - Playwright MCP를 사용한 전체 사용자 플로우 테스트 (관리자 + 클라이언트 시나리오)
-  - 다크/라이트 모드 전환 후 모든 페이지 시각적 검증
-  - 목록 페이지 링크 복사 → 공개 뷰어 접속 플로우 테스트
-  - 관리자 레이아웃 네비게이션 및 사이드바 동작 테스트
-  - 모바일/태블릿/데스크톱 반응형 레이아웃 테스트
-  - `npm run check-all` 및 `npm run build` 전체 통과 확인
+- **Task 014-1: 고도화 통합 테스트** ✅ - 완료
+  - ✅ Playwright MCP를 사용한 전체 사용자 플로우 테스트 (관리자 + 클라이언트 시나리오)
+  - ✅ 다크/라이트 모드 전환 후 모든 페이지 시각적 검증
+  - ✅ 목록 페이지 링크 복사 → 공개 뷰어 접속 플로우 테스트
+  - ✅ 관리자 레이아웃 네비게이션 및 사이드바 동작 테스트
+  - ✅ 모바일/태블릿/데스크톱 반응형 레이아웃 테스트
+  - ✅ `npm run check-all` 및 `npm run build` 전체 통과 확인
+
+### Phase 6: 보안
+
+- **Task 016: 관리자 로그인 구현** ✅ - 완료
+  - ✅ `ADMIN_ID`, `ADMIN_PASSWORD`, `SESSION_SECRET` 환경변수 추가 (`src/lib/env.ts`)
+  - ✅ `src/lib/auth.ts` — SHA-256 토큰 생성/검증/쿠키 헬퍼 (세션 쿠키, 브라우저 종료 시 만료)
+  - ✅ `src/app/login/page.tsx` — 로그인 폼 UI (shadcn Card + Input + Button, Suspense 경계 처리)
+  - ✅ `src/app/login/actions.ts` — loginAction / logoutAction Server Actions
+  - ✅ `middleware.ts` — (admin) 경로 보호 (Edge Runtime, Web Crypto API), /view 및 /login 제외
+  - ✅ `src/app/(admin)/layout.tsx` — 서버 컴포넌트로 전환, `verifySession()` 체크 추가 (Turbopack dev 대비)
+  - ✅ `src/components/layout/admin-layout-client.tsx` — 클라이언트 레이아웃 분리 (로그아웃 버튼 포함)
+  - ✅ `npm run check-all` + `npm run build` 통과
 
 ---
 
 ## 기능 ID 매핑
 
-| 기능 ID  | 기능명                          | 구현 Task  | 상태     |
-| -------- | ------------------------------- | ---------- | -------- |
-| **F001** | 노션 견적서 목록 조회           | Task 006   | ✅ 완료  |
-| **F002** | 견적서 상세 조회                | Task 006   | ✅ 완료  |
-| **F003** | 고유 링크 생성 및 복사          | Task 007   | ✅ 완료  |
-| **F004** | 견적서 공개 뷰어 렌더링         | Task 005   | ✅ 완료  |
-| **F005** | PDF 다운로드                    | Task 008   | ✅ 완료  |
-| **F006** | 견적서 상태 표시                | Task 002   | ✅ 완료  |
-| **F007** | 견적서 유효기간 표시            | Task 002   | ✅ 완료  |
-| **F008** | 다크/라이트 모드 토글           | Task 012   | 진행 중  |
-| **F009** | 목록 페이지 링크 복사           | Task 013   | 대기     |
-| **F010** | 관리자 전용 레이아웃            | Task 014   | ✅ 완료  |
-| **F011** | 견적서 대시보드                 | Task 015   | ✅ 완료  |
+| 기능 ID  | 기능명                  | 구현 Task | 상태    |
+| -------- | ----------------------- | --------- | ------- |
+| **F001** | 노션 견적서 목록 조회   | Task 006  | ✅ 완료 |
+| **F002** | 견적서 상세 조회        | Task 006  | ✅ 완료 |
+| **F003** | 고유 링크 생성 및 복사  | Task 007  | ✅ 완료 |
+| **F004** | 견적서 공개 뷰어 렌더링 | Task 005  | ✅ 완료 |
+| **F005** | PDF 다운로드            | Task 008  | ✅ 완료 |
+| **F006** | 견적서 상태 표시        | Task 002  | ✅ 완료 |
+| **F007** | 견적서 유효기간 표시    | Task 002  | ✅ 완료 |
+| **F008** | 다크/라이트 모드 토글   | Task 012  | ✅ 완료 |
+| **F009** | 목록 페이지 링크 복사   | Task 013  | ✅ 완료 |
+| **F010** | 관리자 전용 레이아웃    | Task 014  | ✅ 완료 |
+| **F011** | 견적서 대시보드         | Task 015  | ✅ 완료 |
 
 ---
 
-**최종 업데이트**: 2026-04-10
-**진행 상황**: Phase 1~4 완료 (11/11 Tasks) / Phase 5 진행 중 (2/5 Tasks 완료, 1/5 진행 중)
+**최종 업데이트**: 2026-04-16
+**진행 상황**: Phase 1~6 완료 (17/17 Tasks) ✅
